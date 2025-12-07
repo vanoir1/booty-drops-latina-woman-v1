@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --terracotta: #E07B54;
+  --coral: #D4654A;
+  --teal: #1A6B6B;
+  --gold: #D4A574;
+  --cream: #FDF8F3;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.bg-terracotta { background-color: var(--terracotta); }
+.bg-coral { background-color: var(--coral); }
+.bg-teal { background-color: var(--teal); }
+.bg-gold { background-color: var(--gold); }
+.bg-cream { background-color: var(--cream); }
+
+.text-terracotta { color: var(--terracotta); }
+.text-coral { color: var(--coral); }
+.text-teal { color: var(--teal); }
+.text-gold { color: var(--gold); }
+
+.border-terracotta { border-color: var(--terracotta); }
+.border-teal { border-color: var(--teal); }
+.border-gold { border-color: var(--gold); }
+
+.ring-terracotta\/20 { --tw-ring-color: rgb(224 123 84 / 0.2); }
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  display: inline-block;
+  padding-right: 50%;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-to-r.from-terracotta.to-coral {
+  background: linear-gradient(to right, var(--terracotta), var(--coral));
+}
+
+.bg-gradient-to-b.from-terracotta\/5.to-cream {
+  background: linear-gradient(to bottom, rgba(224, 123, 84, 0.05), var(--cream));
+}
+
+.bg-gradient-to-b.from-terracotta\/10.to-cream {
+  background: linear-gradient(to bottom, rgba(224, 123, 84, 0.1), var(--cream));
+}
+
+.bg-gradient-to-b.from-cream.to-white {
+  background: linear-gradient(to bottom, var(--cream), white);
+}
+
+/* Custom opacity utilities */
+.bg-terracotta\/5 { background-color: rgb(224 123 84 / 0.05); }
+.bg-terracotta\/10 { background-color: rgb(224 123 84 / 0.1); }
+.bg-teal\/10 { background-color: rgb(26 107 107 / 0.1); }
+.bg-gold\/10 { background-color: rgb(212 165 116 / 0.1); }
+.bg-gold\/20 { background-color: rgb(212 165 116 / 0.2); }
+
+.border-gold\/10 { border-color: rgb(212 165 116 / 0.1); }
+.border-gold\/20 { border-color: rgb(212 165 116 / 0.2); }
+.border-terracotta\/30 { border-color: rgb(224 123 84 / 0.3); }
+.border-terracotta\/50 { border-color: rgb(224 123 84 / 0.5); }
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--terracotta);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--coral);
+}
+/* Hide scrollbar on mobile video carousel */
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+.overflow-x-auto {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
