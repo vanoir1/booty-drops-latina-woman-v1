@@ -152,50 +152,9 @@ class Analytics {
     }
   }
 
-  trackInitiateCheckout(product: ProductInfo): void {
-    console.log('[Analytics] InitiateCheckout:', product);
-
-    // Facebook InitiateCheckout removed - fires on Shopify checkout instead
-
-    try {
-      if (window.ttq) {
-        window.ttq.track('InitiateCheckout', {
-          content_id: product.id,
-          content_name: product.name,
-          content_type: 'product',
-          value: product.price,
-          currency: 'USD',
-          quantity: product.quantity || 1,
-        });
-      }
-    } catch (e) {
-      console.warn('TikTok InitiateCheckout failed:', e);
-    }
-
-    try {
-      if (window.gtag) {
-        window.gtag('event', 'begin_checkout', {
-          currency: 'USD',
-          value: product.price,
-          items: [{
-            item_id: product.id,
-            item_name: product.name,
-            price: product.price,
-            quantity: product.quantity || 1,
-          }],
-        });
-      }
-    } catch (e) {
-      console.warn('GA4 begin_checkout failed:', e);
-    }
-
-    try {
-      if (window.nbpix) {
-        window.nbpix('event', 'initiate_checkout', { nb_value: product.price });
-      }
-    } catch (e) {
-      console.warn('NewsBreak initiate_checkout failed:', e);
-    }
+  // InitiateCheckout - Disabled (no longer tracking this event)
+  trackInitiateCheckout(_product: ProductInfo): void {
+    // Event tracking disabled
   }
 }
 
